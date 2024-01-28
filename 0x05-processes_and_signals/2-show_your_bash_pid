@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-
+#print some procceses
 # shellcheck disable=SC2009
+
 ps aux | grep bash | grep -v grep | grep -v "$0"

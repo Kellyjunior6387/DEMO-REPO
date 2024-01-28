@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#Print the two first proccesses
 
 pgrep -a bash | awk '{print $1, $2}'

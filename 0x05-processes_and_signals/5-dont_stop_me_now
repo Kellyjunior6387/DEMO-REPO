@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
+#Kill the previous proccess
 
-pid = $(pgrep -o 4-to_infinity_and_beyond)
-
- if [ -n "$pid" ]; then
-	kill -15 "$pid"
-	wait "$pid"
-	echo "Terminated"
-else 
-	echo "$pid not found"
-fi
+kill $(pgrep -f 4-to_infinity_and_beyond)
