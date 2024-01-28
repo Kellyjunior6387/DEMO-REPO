@@ -1,0 +1,8 @@
+#!/bin/bash
+pid=$(pgrep -o 7-highlander)
+
+if [ -n "$pid" ]; then
+    kill -TERM "$pid"
+else
+    echo "Process 7-highlander is not running."
+fi
