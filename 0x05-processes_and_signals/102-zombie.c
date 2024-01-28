@@ -1,6 +1,6 @@
 /*
  * File: 102-zombie.c
- * Auth: Brennan D Baraban
+ * Author: Kelvin Nyambane
  */
 
 #include <stdio.h>
@@ -10,8 +10,7 @@
 #include <unistd.h>
 
 /**
- * infinite_while - Run an infinite while loop.
- *
+ * infinite_while - Function to run an infinite while loop.
  * Return: Always 0.
  */
 int infinite_while(void)
