@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Script to display ports ,PID and program name
+
+netstat -l --program
