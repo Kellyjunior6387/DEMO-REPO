@@ -5,5 +5,9 @@ content => "\
 Host ubuntu@54.144.151.196
   IdentityFile ~/.ssh/school
   PasswordAuthentication no
+  SendEnv LANG LC_*
+  HashKnownHosts yes
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials no
 ",
 }
