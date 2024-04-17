@@ -1,7 +1,10 @@
 #!/usr/bin/bash
 #Create a tar archive of sql backups
 
-MYSQL_DUMP="backup.sql"
-DATE_FORMAT="$(date +'%d-%m-%Y')"
-mysqldump -uroot -p"$1" --all-databases > "$MYSQL_DUMP"
-tar -czf "$DATE_FORMAT.tar.gz" "$MYSQL_DUMP"
+day=$(date +"%d")
+month=$(date +"%m")
+year=$(date +"%Y")
+file_name="$day-$month-$year.tar.gz"
+
+mysqldump --all-databases -u root --password="$1" > backup.sql
+tar -czvf "$file_name" backup.sql
