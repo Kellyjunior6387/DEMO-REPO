@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #Create a tar archive of sql backups
 
 day=$(date +"%d")
