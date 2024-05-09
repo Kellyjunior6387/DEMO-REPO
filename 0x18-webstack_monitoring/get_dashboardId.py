@@ -12,4 +12,4 @@ with ApiClient(configuration) as api_client:
         filter_shared=False,
     )
 
-    print(response.id)
+    print(response)
