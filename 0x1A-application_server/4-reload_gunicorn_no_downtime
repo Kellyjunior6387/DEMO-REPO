@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#Automate the gunicorn process
 
 # Get the process IDs of the Gunicorn workers
 worker_pids=$(ps aux | grep '[g]unicorn' | awk '{print $2}')
