@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Get the process IDs of the Gunicorn workers
+worker_pids=$(ps aux | grep '[g]unicorn' | awk '{print $2}')
+
+# Reload Gunicorn gracefully by sending a SIGHUP signal to the master process
+kill -s HUP $(ps aux | grep '[g]unicorn' | awk '{print $2}')
+
+# Wait for a few seconds for the workers to gracefully shutdown
+sleep 5
+
+# Check if all the old workers have stopped
+for pid in $worker_pids; do
+    if ps -p $pid > /dev/null; then
+        echo "Worker $pid still running, killing..."
+        kill -9 $pid
+    fi
+done
+
+# Start new workers
+/path/to/gunicorn --bind 0.0.0.0:8001 --workers 4 web_flask.0-hello_route:app
+
+echo "Gunicorn successfully reloaded without downtime."
+
