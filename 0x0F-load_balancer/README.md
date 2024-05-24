@@ -1,1 +1,2 @@
-load balncer
+##Load balancer
+Project to install a load balancer
